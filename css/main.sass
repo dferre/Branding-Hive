@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700')
+*
+  margin: 0
+  padding: 0
+
+// Colors
+$yellow: #F5BA46
+$light:  #f7f7f7
+$green:  #4fc79f
+$red:  #E14F54
+$text:  #9B9B9B
+$dark: #414042
+
+
+
+// Mixins
+@mixin fade
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+
+
+// Repeatable Elements
+.uploadcare-widget-button-open
+    background: black;
+    opacity: 0;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: -30px;
+    bottom: -10px;
+    z-index: 10;
+
+
+.uploader
+  opacity: 0
+.container
+  max-width: 1200px
+  margin: 0 auto
+  //background: white
+
+h3
+  font-size: 26px
+  font-weight: 200
+  color: $yellow
+  margin-bottom: 25px
+
+h4
+  font-size: 14px
+  font-weight: 400
+  color: $dark
+  margin-top: 15px
+  margin-bottom: 10px
+
+span.lightspan
+  font-size: 12px
+  font-weight: 300
+  color: $text
+
+form.mainform
+  max-width: 450px
+  margin: 0 auto
+  //background: red
+
+button.green, .yellow, .grey
+  color: white
+  padding: 10px 25px
+  border-radius: 2px
+  font-weight: 300
+  box-shadow: none
+  border: 1px solid white
+  margin-top: 20px
+  +fade
+
+
+  &:hover
+     background-color: $dark
+
+  &:focus
+    outline: none
+
+button.green
+  background-color: $green
+
+button.yellow
+  background-color: $yellow
+
+button.grey
+  background-color: #eaeaea
+  color: $text
+
+  &:hover
+    color: white
+
+input.input
+  height: 50px
+  border-radius: 2px
+  padding-left: 15px
+  color: $text
+  font-size: 12px
+  font-weight: 300
+  width: 100%
+  background: #f7f7f7
+  box-shadow: none
+  text-shadow: none
+  border: 1px solid white
+  margin-bottom: 10px
+  transition: all .2s ease-in-out
+
+  &:hover
+    color: $green
+    border: 1px solid $green
+    background: white
+
+  &:hover::placeholder
+    color: $green
+
+
+  &:focus
+    outline: none
+    color: $green
+    border: 1px solid $green
+    background: white
+input.file
+  height: 100%
+  width: 100%
+  opacity: 0
+  z-index: 2
+
+textarea.textarea
+  min-height: 145px
+  border-radius: 2px
+  padding-top: 15px
+  padding-left: 15px
+  color: $text
+  font-size: 12px
+  font-weight: 300
+  width: 100%
+  background: #f7f7f7
+  box-shadow: none
+  text-shadow: none
+  border: 1px solid white
+  margin-bottom: 10px
+  transition: all .2s ease-in-out
+
+  &:hover
+    color: $green
+    border: 1px solid $green
+    background: white
+
+  &:hover::placeholder
+    color: $green
+
+
+  &:focus
+    outline: none
+    color: $green
+    border: 1px solid $green
+    background: white
+
+
+
+
+
+div.fileupload
+  //background: red
+  margin-bottom: 25px
+
+  &:hover
+    cursor: pointer
+
+  div.file
+    width: 60px
+    height: 60px
+    background: #f7f7f7
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 50%
+    margin-bottom: 5px
+
+
+    &:hover
+      box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15)
+
+
+    img
+      position: absolute
+      z-index: 1
+  span.span
+    color: $text
+    font-weight: 300
+    font-size: 14px
+div.split
+  //background: blue
+  display: flex
+  align-items: top
+  justify-content: space-between
+  width: 100%
+
+  .split_side
+    width: 45%
+    //background: green
+
+
+    .two
+      //background: green
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+      .one
+        //background-color: red
+        width: 40%
+  .split_side.withimage
+    display: flex
+    width: 45%
+
+img.svg
+  height: 50px
+  display: inline
+  margin: 0px
+  padding: 0px
+
+
+body
+  font-family: 'Roboto', sans-serif
+  background: #FAFAFA
+
+  .section
+    padding: 100px 0px
+
+
+  nav
+    //background: white
+    height: 80px
+    padding-top: 10px
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    background: white
+
+    .container
+      //background: blue
+
+      .flex-between
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        .profilePicture
+          //background: blue
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 70px;
+
+          .profilePic
+            width: 55px
+            height: 55px
+            border-radius: 50%
+            display: flex
+            justify-content: center
+            align-items: center
+            overflow: hidden
+            margin-right: 10px;
+
+            .ppp
+              width: 55px
+            .profile_info
+              .namespan
+                color: $text;
+                font-size: 12px;
+                font-weight: 300;
+
+
+        .logo
+          height: 70px
+          //background: red
+          display: flex
+          justify-content: left
+          align-items: center
+          //position: absolute
+          //left: 45px
+
+        a#signupbutton
+          //position: absolute
+          //right: 45px
+          //margin-top: 15px
+          text-decoration: none
+          color: white
+          background-color: $yellow
+          padding: 10px 25px
+          border-radius: 2px
+          font-weight: 300
+          +fade
+
+
+          &:hover
+             background-color: $dark
+  #signupform
+    //background: red
+    padding: 100px 0px
+    margin-top: 150px
+
+
+    .form-container
+      max-width: 715px
+      margin: 0 auto
+      background: white
+      border: 1px solid #EAEAEA
+      padding: 45px 45px
+      position: relative
+
+      div.progress
+        width: 100%
+        position: absolute
+        top: 0px
+        height: 6px
+        background: #eaeaea
+        margin: 0 auto
+        padding: 0px
+        margin-left: -45px
+        z-index: 1
+
+        div.progress-status
+          background: $green
+          width: 10%
+          z-index: 2
+          height: 6px
+
+      h5.lightspan
+        text-align: right
+        width: 100%
+        display: block
+        position: absolute
+        margin-left: -45px
+        top: 15px
+        right: 15px
+        font-size: 12px
+        font-weight: 300
+        color: $text
+
+        .greenSpan#status
+          color: $green
+
+
+      form.mainform
+
+        div#step1
+
+
+        div#step2, div#step3, div#step4, div#step5, div#step6, div#step7, div#step8, div#step9, div#step10
+          display: none

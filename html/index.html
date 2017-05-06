@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Hive</title>
+    <!-- CSS stylesheet-->
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <nav>
+      <div class="logo"><a href="index.html"><img id="logo" src="images/logo.png" alt="The Branding Hive"></a></div><a id="signupbutton" href="signup.html">Sign Up</a>
+    </nav>
+    <!-- Section-->
+    <section id="signupform">
+      <div class="form-container">
+        <div class="progress">
+          <div class="progress-status" id="progressBar"></div>
+        </div>
+        <h5 class="lightspan">Step <span class="greenSpan" id="status">1</span> of 10</h5>
+        <form class="mainform" id="signUp" onsubmit="return false">
+          <!-- Step 1-->
+          <div id="step1">
+            <h3>Let’s Create A Brand!</h3>
+            <input class="input" id="username" name="username" placeholder="Create A Username:" type="text">
+            <input class="input" id="password" name="password" placeholder="Create A Password:" type="passsword">
+            <button class="green" onclick="processStep1()">Next Step</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

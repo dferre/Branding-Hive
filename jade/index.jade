@@ -1,0 +1,24 @@
+doctype html
+html
+  include includes/head.jade
+  script.
+    function submitForm(){
+      _("signUp").method = "post";
+      _("signUp").action = "login.php";
+      _("signUp").submit();
+
+     }
+  body
+    include includes/nav.jade
+    // Section
+    section#signupform
+      .form-container
+        form.mainform#login(onsubmit="return false")
+          // Step 1
+          div
+            h3 Let’s Create A Brand!
+            input.input#username(name="username" placeholder="Username:" type="text")
+            input.input#password(name="password" placeholder="Password:" type="passsword")
+            button.yellow(onclick="submitForm()") Log In
+            
+    

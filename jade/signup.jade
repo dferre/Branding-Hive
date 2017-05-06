@@ -1,0 +1,384 @@
+doctype html
+html
+  
+  head
+    title The Hive
+    // CSS stylesheet
+    link(rel='stylesheet', href='css/main.css')
+    script.
+      function _(x){
+        return document.getElementById(x);
+      }
+      
+      function processStep1(){
+      _("step1").style.display = "none";
+      _("step2").style.display = "block";
+      _("progressBar").style.width = "20%";
+      _("status").innerHTML = "2";
+		  
+        
+      }
+      
+      function processStep2(){
+        _("step2").style.display = "none";
+        _("step3").style.display = "block";
+        _("progressBar").style.width = "30%";
+        _("status").innerHTML = "3";
+      }
+      
+      function processStep3(){
+        _("step3").style.display = "none";
+        _("step4").style.display = "block";
+        _("progressBar").style.width = "40%";
+        _("status").innerHTML = "4";
+      }
+      
+      function processStep4(){
+        _("step4").style.display = "none";
+        _("step5").style.display = "block";
+        _("progressBar").style.width = "50%";
+        _("status").innerHTML = "5";
+      }
+      
+      function processStep5(){
+        _("step5").style.display = "none";
+        _("step6").style.display = "block";
+        _("progressBar").style.width = "60%";
+        _("status").innerHTML = "6";
+      }
+      
+      function processStep6(){
+        _("step6").style.display = "none";
+        _("step7").style.display = "block";
+        _("progressBar").style.width = "70%";
+        _("status").innerHTML = "7";
+      }
+      
+      function processStep7(){
+        _("step7").style.display = "none";
+        _("step8").style.display = "block";
+        _("progressBar").style.width = "80%";
+        _("status").innerHTML = "8";
+      }
+      
+      function processStep8(){
+        _("step8").style.display = "none";
+        _("step9").style.display = "block";
+        _("progressBar").style.width = "90%";
+        _("status").innerHTML = "9";
+      }
+      
+      function processStep9(){
+        _("step9").style.display = "none";
+        _("step10").style.display = "block";
+        _("progressBar").style.width = "100%";
+        _("status").innerHTML = "10";
+      }
+      
+      // Go Back 
+      function backsStep2(){
+        _("step2").style.display = "none";
+        _("step1").style.display = "block";
+        _("progressBar").style.width = "10%";
+        _("status").innerHTML = "1";
+      }
+      
+      function backsStep3(){
+        _("step3").style.display = "none";
+        _("step2").style.display = "block";
+        _("progressBar").style.width = "20%";
+        _("status").innerHTML = "2";
+      }
+      
+      function backsStep4(){
+        _("step4").style.display = "none";
+        _("step3").style.display = "block";
+        _("progressBar").style.width = "30%";
+        _("status").innerHTML = "3";
+      }
+      
+      function backsStep5(){
+        _("step5").style.display = "none";
+        _("step4").style.display = "block";
+        _("progressBar").style.width = "40%";
+        _("status").innerHTML = "4";
+      }
+      
+      function backsStep6(){
+        _("step6").style.display = "none";
+        _("step5").style.display = "block";
+        _("progressBar").style.width = "50%";
+        _("status").innerHTML = "5";
+      }
+      
+      function backsStep7(){
+        _("step7").style.display = "none";
+        _("step6").style.display = "block";
+        _("progressBar").style.width = "60%";
+        _("status").innerHTML = "6";
+      }
+      
+      function backsStep8(){
+        _("step8").style.display = "none";
+        _("step7").style.display = "block";
+        _("progressBar").style.width = "70%";
+        _("status").innerHTML = "7";
+      }
+      
+      function backsStep9(){
+        _("step9").style.display = "none";
+        _("step8").style.display = "block";
+        _("progressBar").style.width = "80%";
+        _("status").innerHTML = "8";
+      }
+      
+      function backsStep10(){
+        _("step10").style.display = "none";
+        _("step9").style.display = "block";
+        _("progressBar").style.width = "90%";
+        _("status").innerHTML = "9";
+      }
+      
+      function submitForm(){
+        _("signUp").method = "post";
+        _("signUp").action = "signup.php";
+        _("signUp").submit();
+
+       }
+
+  
+  
+  
+  body
+    include includes/nav.jade
+    
+    // Section
+    section#signupform
+      .form-container
+        div.progress
+          div.progress-status#progressBar
+        h5.lightspan Step <span class="greenSpan" id="status">1</span> of 10
+        form.mainform#signUp(onsubmit="return false")
+          
+          
+          // Step 1
+          div#step1
+            h3 Let’s Create A Brand!
+            input.input#username(name="username" placeholder="Create A Username:" type="text")
+            input.input#password(name="password" placeholder="Create A Password:" type="passsword")
+            button.green(onclick="processStep1()") Next Step
+            
+          // Step 2
+          div#step2
+            h3 Personal Profile
+            div.fileupload
+              div.file
+                img(src="images/upload.png" alt="Upload Document")
+                input.file#profilePicture(name="profilepicture" type="file")
+              span.span#upload_file_name Upload A Profile Picture
+            div.split
+              .split_side
+                input.input#first_name(name="FirstName" placeholder="First Name:" type="text")
+              .split_side
+                input.input#last_name(name="LastName" placeholder="Last Name:" type="text")
+            input.input#email(name="email" placeholder="Email Address:" type="email")
+            input.input#phone(name="phone" placeholder="Phone Number:" type="text")
+            textarea.textarea#personalBio(name="personalBio" placeholder="Tell us a liitle bit about you:")
+            button.grey(onclick="backsStep2()") Go Back
+            button.green(onclick="processStep2()") Next Step
+            
+          // Step 3
+          div#step3
+            h3 Company Profile
+            div.split
+              .split_side
+                input.input#CompanyLegalName(name="CompanyLegalName" placeholder="Company Legal Name:" type="text")
+              .split_side
+                input.input#BrandName(name="BrandName" placeholder="Brand Name:" type="text")
+            input.input#Address(name="Address" placeholder="Company Address:" type="text")
+            div.split
+              .split_side
+                input.input#City(name="City" placeholder="City:" type="text")
+              .split_side
+                .two
+                  .one
+                    input.input#State(name="State" placeholder="State:" type="text")
+                  .one
+                    input.input#ZIP(name="ZIP" placeholder="ZIP:" type="text")
+            input.input#Website(name="Website" placeholder="Website:" type="text")   
+            div.split
+              .split_side.withimage
+                img.svg(src="images/facebook.svg", alt="alt")
+                input.input#Facebook(name="Facebook" placeholder="Facebook:" type="text")
+              .split_side.withimage
+                img.svg(src="images/twitter.svg", alt="alt")
+                input.input#Twitter(name="Twitter" placeholder="Twitter:" type="text")
+            div.split
+              .split_side.withimage
+                img.svg(src="images/instagram.svg", alt="alt")
+                input.input#Instagram(name="Instagram" placeholder="Instagram:" type="text")
+              .split_side.withimage
+                img.svg(src="images/linkedin.svg", alt="alt")
+                input.input#LinkedIn(name="LinkedIn" placeholder="LinkedIn:" type="text")   
+            button.grey(onclick="backsStep3()") Go Back
+            button.green(onclick="processStep3()") Next Step     
+          
+          // Step 4
+          div#step4
+            h3 Brand Profile   
+            textarea.textarea#BrandHistory(name="BrandHistory" placeholder="Brand History:")
+            div.split
+              .split_side
+                input.input#Industry(name="Industry" placeholder="Industry:" type="text")
+              .split_side
+                input.input#TargetMarket(name="TargetMarket" placeholder="Target Market:" type="text")
+            h4 Brand Mantra 
+              span.lightspan A brand mantra describes your business in four words or less.
+            div.split
+              .split_side
+                input.input#Word1(name="Word1" placeholder="Word 1:" type="text")
+              .split_side
+                input.input#Word2(name="Word1" placeholder="Word 2:" type="text")
+            div.split
+              .split_side
+                input.input#Word3(name="Word1" placeholder="Word 3:" type="text")
+              .split_side
+                input.input#Word4(name="Word1" placeholder="Word 4:" type="text")
+            h4 Imagination Statement (Mission) 
+              span.lightspan We imagine a world where…
+            input.input#ImaginationStatement(name="ImaginationStatement" placeholder="We imagine a world where…" type="text") 
+            h4 The Six: Bold Audacious Goals
+            div.split
+              .split_side
+                input.input#Goal1(name="Goal1" placeholder="Goal 1:" type="text")
+              .split_side
+                input.input#Goal2(name="Goal2" placeholder="Goal 2:" type="text")
+            div.split
+              .split_side
+                input.input#Goal3(name="Goal3" placeholder="Goal 3:" type="text")
+              .split_side
+                input.input#Goal4(name="Goal4" placeholder="Goal 4:" type="text")
+            div.split
+              .split_side
+                input.input#Goal5(name="Goal5" placeholder="Goal 5:" type="text")
+              .split_side
+                input.input#Goal6(name="Goal6" placeholder="Goal 6:" type="text")
+            button.grey(onclick="backsStep4()") Go Back
+            button.green(onclick="processStep4()") Next Step 
+            
+          
+          // Step 5
+          div#step5
+            h3 Brand Style & Standards 
+            h4 Your Brand Visual Identity & Creative Assets 
+            div.fileupload
+              div.file
+                img(src="images/upload.png" alt="Upload Document")
+                input.file#companyLogo(name="companyLogo" type="file")
+              span.span#companyLogoText Upload Company Logo
+            div.fileupload
+              div.file
+                img(src="images/upload.png" alt="Upload Document")
+                input.file#BrandStandards(name="BrandStandards" type="file")
+              span.span#BrandStandardsText Upload Brand Standards
+            div.fileupload
+              div.file
+                img(src="images/upload.png" alt="Upload Document")
+                input.file#OtherAssets(name="OtherAssets" type="file")
+              span.span#OtherAssetsText Other Assets
+            h4 Corporate Color Palette
+            div.split
+              .split_side
+                input.input#Color1(name="Color1" placeholder="Pantone Code / CMYK / Hex:" type="text")
+              .split_side
+                input.input#Color2(name="Color2" placeholder="Pantone Code / CMYK / Hex:" type="text")
+            div.split
+              .split_side
+                input.input#Color3(name="Color3" placeholder="Pantone Code / CMYK / Hex:" type="text")
+              .split_side
+                input.input#Color4(name="Color4" placeholder="Pantone Code / CMYK / Hex:" type="text")
+            h4 Font Choices
+            div.split
+              .split_side
+                input.input#Font1(name="Font1" placeholder="Font Name:" type="text")
+              .split_side
+                input.input#Font2(name="Font2" placeholder="Font Name:" type="text")
+            
+            button.grey(onclick="backsStep5()") Go Back
+            button.green(onclick="processStep5()") Next Step 
+                
+          // Step 6
+          div#step6
+            h3 Brand Persona 
+            h4 Please provide a list of key words which best describe your brand persona. 
+              br
+              span.lightspan (i.e. Fun, light hearted, goofy, realistic)
+            textarea.textarea#KeyWords(name="KeyWords" placeholder="(i.e. Fun, light hearted, goofy, realistic)")
+            h4 Top of mind: When people think…  we want them to think of us first. 
+            textarea.textarea#PeopleThink(name="PeopleThink" placeholder="(i.e. Industry)")
+            h4 We are unique on the planet because we are the….  
+              br
+              span.lightspan (i.e. We are the first to….    We are the only….)  
+            textarea.textarea#Unique(name="Unique" placeholder="(i.e. We are the first to….    We are the only….)")
+            button.grey(onclick="backsStep6()") Go Back
+            button.green(onclick="processStep6()") Next Step 
+            
+            
+          // Step 7
+          div#step7
+            h3 Situation Analysis
+            textarea.textarea#Challenge(name="Challenge" placeholder="Our biggest challenge for this year is…")
+            textarea.textarea#OvercomeChallenge(name="OvercomeChallenge" placeholder="We will know we have overcome this challenge when…")
+            button.grey(onclick="backsStep7()") Go Back
+            button.green(onclick="processStep7()") Next Step 
+            
+          // Step 8
+          div#step8
+            h3 Competition
+            h4 The Top Six: Our biggest competition comes from these six
+              br
+              span.lightspan Enter their website link
+            div.split
+              .split_side
+                input.input#Competition1(name="Competition1" placeholder="Website Link:" type="text")
+              .split_side
+                input.input#Competition2(name="Competition2" placeholder="Website Link:" type="text")
+            div.split
+              .split_side
+                input.input#Competition3(name="Competition3" placeholder="Website Link:" type="text")
+              .split_side
+                input.input#Competition4(name="Competition4" placeholder="Website Link:" type="text")
+            div.split
+              .split_side
+                input.input#Competition5(name="Competition5" placeholder="Website Link:" type="text")
+              .split_side
+                input.input#Competition6(name="Competition6" placeholder="Website Link:" type="text")
+            textarea.textarea#CompetitiveAdvantage(name="CompetitiveAdvantage" placeholder="The one thing we have over all these is… (Competitive advantage)")
+            button.grey(onclick="backsStep8()") Go Back
+            button.green(onclick="processStep8()") Next Step 
+            
+          // Step 9
+          div#step9
+            h3 SWOT Analysis
+            textarea.textarea#Strengths(name="Strengths" placeholder="Strengths")
+            textarea.textarea#Weaknesses(name="Weaknesses" placeholder="Weaknesses")
+            textarea.textarea#Opportunities(name="Opportunities" placeholder="Opportunities")
+            textarea.textarea#Threats(name="Threats" placeholder="Threats")
+            button.grey(onclick="backsStep9()") Go Back
+            button.green(onclick="processStep9()") Next Step 
+            
+          // Step 2
+          div#step10
+            h3 Human Interactions
+            h4 How does your brand reach, inspire and engage?
+            textarea.textarea#Emotional(name="Emotional" placeholder="Emotional")
+            textarea.textarea#Spiritual(name="Spiritual" placeholder="Spiritual (Higher Purpose)")
+            textarea.textarea#Functional(name="Functional" placeholder="Functional")
+            textarea.textarea#Threats(name="Social" placeholder="Social")
+            textarea.textarea#Notes(name="Notes" placeholder="Additional Notes")
+            button.grey(onclick="backsStep10()") Go Back
+            button.yellow(onclick="submitForm()") View Your Brand!
+            
+            
+            
+          
